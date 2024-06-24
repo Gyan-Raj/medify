@@ -1,0 +1,14 @@
+.button {
+  border: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding: 0.75rem 2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.primary {
+  background: rgba(42, 168, 255, 1);
+  color: #ffffff;
+}

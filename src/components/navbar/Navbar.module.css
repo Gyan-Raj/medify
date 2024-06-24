@@ -1,0 +1,77 @@
+.header {
+  /* width: 1440px; */
+  height: 40px;
+  /* gap: 0px;
+  opacity: 0px; */
+  background: rgba(42, 167, 255, 1);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  /* text-align: center; */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.navbar {
+  /* width: 1440px; */
+  height: 96px;
+  top: 40px;
+  gap: 0px;
+  opacity: 0px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+}
+.navbarWrapper {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 92px;
+  height: 27px;
+  top: 72px;
+  left: 135px;
+  gap: 0px;
+  opacity: 0px;
+}
+.menu {
+  /* width: Fixed (912px) px; */
+  /* height: Hug (40px) px; */
+  top: 64px;
+  left: 393px;
+  gap: 40px;
+  opacity: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lists {
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin-right: -9rem;
+}
+.lists > li > a {
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: rgba(16, 40, 81, 1);
+}
