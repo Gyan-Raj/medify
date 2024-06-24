@@ -1,0 +1,61 @@
+.ourFamilies {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftContainer {
+  height: 50%;
+  width: 50%;
+  padding: 2rem 0;
+}
+.headOne {
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+  color: rgba(42, 167, 255, 1);
+  text-transform: uppercase;
+}
+.headTwo {
+  font-family: Poppins;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 67px;
+  text-align: left;
+  color: rgba(27, 60, 116, 1);
+}
+.mission {
+  font-family: Inter;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 40.8px;
+  text-align: left;
+  color: rgba(119, 130, 157, 1);
+}
+
+.rightContainer {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightContainer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 50%;
+}
+.leftWrapper {
+  position: relative;
+  top: -20px;
+}
+.rightWrapper {
+  position: relative;
+  bottom: -20px;
+}

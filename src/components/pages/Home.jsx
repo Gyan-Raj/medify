@@ -31,16 +31,16 @@ const Home = () => {
         <div className={style.specialist}>
           <Specialists />
         </div>
-        <div>
+        <div className={style.freeConsultation}>
           <FreeConsultation />
         </div>
-        <div>
+        <div className={style.latestNews}>
           <LatestNews />
         </div>
-        <div>
+        <div className={style.ourFamilies}>
           <OurFamilies />
         </div>
-        <div>
+        <div className={style.faq}>
           <Faq />
         </div>
         <div>
