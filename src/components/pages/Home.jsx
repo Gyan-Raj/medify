@@ -43,10 +43,10 @@ const Home = () => {
         <div className={style.faq}>
           <Faq />
         </div>
-        <div>
+        <div className={style.downloadApp}>
           <DownloadApp />
         </div>
-        <div>
+        <div className={style.footer}>
           <Footer />
         </div>
       </div>

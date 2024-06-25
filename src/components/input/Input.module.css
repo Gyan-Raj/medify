@@ -13,6 +13,7 @@
   justify-content: center;
   border: 1px solid rgba(240, 240, 240, 1);
   background: rgba(240, 240, 240, 1);
+  padding-left: 1rem;
 }
 .input > span {
   margin-left: 2rem;
@@ -34,4 +35,16 @@
 }
 .input > input:focus {
   outline: none;
+}
+.disabled > input {
+  /* border-right: 1px solid rgba(180, 180, 190, 0.3); */
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  padding: 1rem;
+  width: 70px;
+  margin-right: 0.5rem;
 }

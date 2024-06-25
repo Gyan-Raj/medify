@@ -1,0 +1,10 @@
+<svg width="302" height="427" viewBox="0 0 302 503" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="302" height="503" fill="url(#pattern0_32_501)"/>
+<defs>
+<pattern id="pattern0_32_501" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_32_501" transform="scale(0.00625 0.00376194)"/>
+</pattern>
+<!-- <image href="./screenDisplay.png" width="302" height="380" /> -->
+<image id="image0_32_501" width="160" height="340" href="./screenDisplay.png"/>
+</defs>
+</svg>
