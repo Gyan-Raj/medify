@@ -26,7 +26,7 @@ const DownloadApp = () => {
         <div style={{ display: "flex" }}>
           <Input
             type="text"
-            disabled="true"
+            disabled={true}
             placeholder="+91"
             styles="disabled"
             value=""

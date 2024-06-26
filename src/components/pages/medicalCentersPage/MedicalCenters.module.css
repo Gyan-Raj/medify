@@ -1,0 +1,28 @@
+.medicalCenters {
+  width: 100%;
+  background: linear-gradient(
+    81deg,
+    #e7f0ff 9.01%,
+    rgba(232, 241, 255, 0.47) 89.11%
+  );
+}
+.topContainer {
+  width: 100%;
+}
+.bottomContainer {
+  width: 100%;
+  display: flex;
+}
+.leftContainer {
+  width: 70%;
+}
+.rightContainer,
+.rightContainer > img {
+  width: 363px;
+  height: 268px;
+  top: 314px;
+  left: 939px;
+  gap: 0px;
+  border-radius: 15px;
+  opacity: 0px;
+}

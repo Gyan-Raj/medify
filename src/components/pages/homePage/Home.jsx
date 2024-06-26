@@ -1,16 +1,16 @@
 import React from "react";
-import Hoarding from "../hoarding/Hoarding";
-import Search from "../search/Search";
+import Hoarding from "../../hoarding/Hoarding";
+import Search from "../../search/Search";
 import style from "./Home.module.css";
-import Offers from "../offers/Offers";
-import FindBySpecialization from "../findBySpecialization/FindBySpecialization";
-import Specialists from "../specialists/Specialists";
-import FreeConsultation from "../freeConsultation/FreeConsultation";
-import LatestNews from "../latestNews/LatestNews";
-import OurFamilies from "../ourFamilies/OurFamilies";
-import Faq from "../faq/Faq";
-import DownloadApp from "../downloadApp/DownloadApp";
-import Footer from "../footer/Footer";
+import Offers from "../../offers/Offers";
+import FindBySpecialization from "../../findBySpecialization/FindBySpecialization";
+import Specialists from "../../specialists/Specialists";
+import FreeConsultation from "../../freeConsultation/FreeConsultation";
+import LatestNews from "../../latestNews/LatestNews";
+import OurFamilies from "../../ourFamilies/OurFamilies";
+import Faq from "../../faq/Faq";
+import DownloadApp from "../../downloadApp/DownloadApp";
+import Footer from "../../footer/Footer";
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
       </div>
       <div className={style.content}>
         <div className={style.search}>
-          <Search />
+          <Search home={true} />
         </div>
         <div className={style.offers}>
           <Offers />
@@ -42,12 +42,6 @@ const Home = () => {
         </div>
         <div className={style.faq}>
           <Faq />
-        </div>
-        <div className={style.downloadApp}>
-          <DownloadApp />
-        </div>
-        <div className={style.footer}>
-          <Footer />
         </div>
       </div>
     </div>
