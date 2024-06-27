@@ -17,10 +17,15 @@ const MedicalCenters = () => {
         <div className={style.leftContainer}>
           {data && (
             <>
-              <p>{data.length} medical centers available in Alaska</p>
-              <div>
-                <Tick />{" "}
-                <span>
+              <p className={style.noOfMedicalCenters}>
+                {data.length} medical {data.length > 1 ? "centers" : "center"}{" "}
+                available in Alaska
+              </p>
+              <div className={style.detailsContainer}>
+                <div className={style.tick}>
+                  <Tick />
+                </div>
+                <span className={style.details}>
                   Book appointments with minimum wait-time & verified doctor
                   details
                 </span>

@@ -20,3 +20,6 @@ code {
   padding: 1rem;
   margin-bottom: 1rem;
 }
+#panel2-header {
+  cursor: default;
+}
