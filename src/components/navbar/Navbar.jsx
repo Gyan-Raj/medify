@@ -17,7 +17,10 @@ const Navbar = () => {
       <nav className={style.navbar}>
         <main className={style.navbarWrapper}>
           <div className={style.logo}>
-            <Logo />
+            <Link to="/">
+              {" "}
+              <Logo />
+            </Link>
           </div>
           <div className={style.menu}>
             <ul className={style.lists}>
@@ -42,7 +45,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div>
-            <Button styles="primary">My Bookings</Button>
+            <Link to="/my-booking">
+              <Button styles="primary">My Bookings</Button>
+            </Link>
           </div>
         </main>
       </nav>

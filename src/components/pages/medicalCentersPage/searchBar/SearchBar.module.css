@@ -9,6 +9,15 @@
   height: 100px;
   background: linear-gradient(91.75deg, #2aa7ff 1.4%, #0c8ce6 100.57%);
 }
+.background > p {
+  font-family: Ubuntu;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45.96px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+
 .search {
   position: relative;
   top: -50px;

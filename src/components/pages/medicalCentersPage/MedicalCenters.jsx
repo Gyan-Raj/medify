@@ -11,7 +11,7 @@ const MedicalCenters = () => {
   return (
     <div className={style.medicalCenters}>
       <div className={style.topContainer}>
-        <SearchBar />
+        <SearchBar home={false} booking={false} />
       </div>
       <div className={style.bottomContainer}>
         <div className={style.leftContainer}>
@@ -31,7 +31,7 @@ const MedicalCenters = () => {
                 </span>
               </div>
               {data.map((ele) => {
-                return <HospitalCard hospital={ele} />;
+                return <HospitalCard hospital={ele} booking={false} />;
               })}
             </>
           )}

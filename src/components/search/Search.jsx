@@ -13,23 +13,6 @@ import { ReactComponent as SearchIcon } from "../../assets/search/icon.svg";
 const Search = ({ home }) => {
   const [stateData, setStateData] = useOutletContext();
   console.log(stateData);
-  // const [state, setState] = useState("");
-  // const [city, setCity] = useState("");
-  // let handleChange = (e) => {
-  //   let { name, value } = e.target;
-  //   console.log(name, value);
-  //   switch (name) {
-  //     case "state":
-  //       setState(value);
-  //       break;
-  //     case "city":
-  //       setCity(value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
-  // let handleSubmit = () => {};
   return (
     <div className={style.search}>
       <div className={style.topContainer}>

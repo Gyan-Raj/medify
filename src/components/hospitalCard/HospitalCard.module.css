@@ -1,12 +1,13 @@
 .hospitalCard {
   width: 785px;
+  height: auto;
   margin-left: 110px;
   padding: 24px 0px 0px 0px;
   gap: 14px;
   border-radius: 15px;
   opacity: 0px;
   background: rgba(255, 255, 255, 1);
-  display: flex;
+  /* display: flex; */
 }
 .leftContainer {
   width: 20%;
@@ -124,6 +125,17 @@
   align-items: center;
   justify-content: flex-end;
   padding: 25px 10px;
+}
+.rightContainerBooking {
+  width: 30%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; */
+  padding: 25px 10px;
+}
+.rightContainerBooking > div {
+  display: flex;
 }
 .available {
   font-family: Poppins;
