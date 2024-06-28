@@ -10,9 +10,7 @@ import { ReactComponent as Ambulance } from "../../assets/youMayBeLookingFor/amb
 import Select from "../selectInput/Select";
 import { ReactComponent as SearchIcon } from "../../assets/search/icon.svg";
 
-const Search = ({ home }) => {
-  const [stateData, setStateData] = useOutletContext();
-  console.log(stateData);
+const Search = ({ home, stateData, setStateData }) => {
   return (
     <div className={style.search}>
       <div className={style.topContainer}>
@@ -24,9 +22,8 @@ const Search = ({ home }) => {
           <Select
             icon={<SearchIcon />}
             name="state"
-            // value={state}
             data={stateData}
-            // onChange={handleChange}
+            // onChange={setStateData((e) => e.target.value)}
             selectedValue="State"
             styles="state"
           />

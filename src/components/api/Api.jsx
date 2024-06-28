@@ -5,8 +5,6 @@ export const fetchStates = async () => {
     let response = await axios.get(
       "https://meddata-backend.onrender.com/states"
     );
-    // console.log(response);
-    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -15,9 +13,21 @@ export const fetchStates = async () => {
 export const fetchCities = (state) => {
   try {
     let response = axios
-      .get("https://meddata-backend.onrender.com/states")
+      .get(`https://meddata-backend.onrender.com/states=${state}&cities`)
       .then((res) => {
-        // console.log(res.data);
+        return res.data;
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const fetchHospitals = (state, city) => {
+  try {
+    let response = axios
+      .get(
+        `https://meddata-backend.onrender.com/states=${state}&cities=${city}`
+      )
+      .then((res) => {
         return res.data;
       });
   } catch (error) {

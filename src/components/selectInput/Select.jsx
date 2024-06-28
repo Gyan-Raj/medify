@@ -7,10 +7,11 @@ const Select = ({
   value,
   onChange,
   data,
+  stateData,
   selectedValue,
   styles,
 }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <select
       id={selectedValue}
@@ -22,10 +23,10 @@ const Select = ({
       <option disabled selected value="">
         {icon} {selectedValue}
       </option>
-      {/* {data.length > 0 &&
-        (data || []).map((ele) => {
+      {stateData &&
+        stateData.map((ele) => {
           return <option value={value}>{ele}</option>;
-        })} */}
+        })}
     </select>
   );
 };
