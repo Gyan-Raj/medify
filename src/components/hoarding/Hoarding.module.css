@@ -27,7 +27,6 @@
   top: 180px;
   left: 135px;
   gap: 0px;
-  opacity: 0px;
 }
 .topContainer > p {
   font-family: Poppins;
@@ -52,7 +51,6 @@
   top: 323px;
   left: 137px;
   gap: 0px;
-  opacity: 0px;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -71,7 +69,6 @@
   top: 82px;
   left: 1340px;
   gap: 0px;
-  opacity: 0px;
   width: 50%;
   /* angle: -180 deg; */
   /* display: flex; */

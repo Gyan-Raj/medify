@@ -5,7 +5,6 @@
   left: 135px;
   gap: 0px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -37,7 +36,6 @@
   top: 697px;
   left: 600px;
   gap: 0px;
-  opacity: 0px;
   font-family: Poppins;
   font-size: 20px;
   font-weight: 500;
