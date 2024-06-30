@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import style from "./Calendar.module.css";
 import { Box, Tab, Tabs } from "@mui/material";
 import { DateTime } from "luxon";
-import SlotInput from "../input/SlotInput";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedTime } from "../state/hospitalsList/hospitalSlice";
 
 const Label = ({ day, slots }) => {
   return (
@@ -36,22 +37,37 @@ const Label = ({ day, slots }) => {
   );
 };
 
-let morningSlots = ["11:30 AM"];
-let afternoonSlots = [
+const morningSlots = ["11:30 AM"];
+const afternoonSlots = [
   "12:00 PM",
   "12:30 PM",
   "01:30 PM",
   "02:00 PM",
   "02:30 PM",
 ];
-let eveningSlots = ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"];
+const eveningSlots = ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"];
 
-const Calendar = () => {
+const Calendar = ({ setIsSelected, isSelected }) => {
   const [value, setValue] = useState(0);
+  const [selectedSlot, setSelectedSlot] = useState(null);
+
+  const selectedHospital = useSelector(
+    (state) => state.hospital.selectedHospital
+  );
+  const selectedTime = useSelector((state) => state.hospital.selectedTime);
+  const selectedDate = useSelector((state) => state.hospital.selectedDate);
+  const dispatch = useDispatch();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleClick = (slot) => {
+    dispatch(setSelectedTime(slot));
+    setSelectedSlot(slot);
+    setIsSelected(slot !== selectedSlot || !isSelected);
+  };
+
   return (
     <div className={style.calendar}>
       <Box sx={{ bgcolor: "background.paper" }} className={style.calendarBox}>
@@ -63,19 +79,8 @@ const Calendar = () => {
           allowScrollButtonsMobile
           aria-label="scrollable force tabs example"
         >
-          <Tab
-            label={
-              <Label day={DateTime.now().toFormat("EEE, dd MMM")} slots="11" />
-            }
-          />
-          <Tab
-            label={
-              <Label
-                day={DateTime.now().plus({ days: 1 }).toFormat("EEE, dd MMM")}
-                slots="8"
-              />
-            }
-          />
+          <Tab label={<Label day={"Today"} slots="11" />} />
+          <Tab label={<Label day={"Tomorrow"} slots="8" />} />
           <Tab
             label={
               <Label
@@ -117,110 +122,77 @@ const Calendar = () => {
             }
           />
         </Tabs>
-        <table>
-          <tr>
-            <td>
-              {morningSlots && (
-                <p
+        <div className={style.slots}>
+          <div className={style.slot}>
+            <p className={style.title}>Morning</p>
+            <div>
+              {morningSlots.map((slot) => (
+                <button
+                  key={slot}
+                  onClick={() => handleClick(slot)}
                   style={{
-                    fontFamily: "Lato",
-                    fontSize: "14px",
-                    fontWeight: "400",
-                    lineHeight: "19.6px",
-                    textAlign: "left",
-                    color: "rgba(65, 65, 70, 1)",
+                    backgroundColor:
+                      selectedSlot === slot && isSelected
+                        ? "rgba(42, 167, 255, 1)"
+                        : "",
+                    color:
+                      selectedSlot === slot && isSelected
+                        ? "white"
+                        : "rgba(42, 167, 255, 1)",
                   }}
                 >
-                  Morning
-                </p>
-              )}
-            </td>
-            {morningSlots &&
-              morningSlots.map((slot) => {
-                return (
-                  <td>
-                    <div style={{ display: "flex" }}>
-                      <SlotInput
-                        type="text"
-                        name={slot}
-                        value={slot}
-                        styles="slots"
-                        disabled={true}
-                      />
-                    </div>
-                  </td>
-                );
-              })}
-          </tr>
-          <tr>
-            <td>
-              {afternoonSlots && (
-                <p
+                  {slot}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className={style.slot}>
+            <p className={style.title}>Afternoon</p>
+            <div>
+              {afternoonSlots.map((slot) => (
+                <button
+                  key={slot}
+                  onClick={() => handleClick(slot)}
                   style={{
-                    fontFamily: "Lato",
-                    fontSize: "14px",
-                    fontWeight: "400",
-                    lineHeight: "19.6px",
-                    textAlign: "left",
-                    color: "rgba(65, 65, 70, 1)",
+                    backgroundColor:
+                      selectedSlot === slot && isSelected
+                        ? "rgba(42, 167, 255, 1)"
+                        : "",
+                    color:
+                      selectedSlot === slot && isSelected
+                        ? "white"
+                        : "rgba(42, 167, 255, 1)",
                   }}
                 >
-                  Afternoon
-                </p>
-              )}
-            </td>
-            {afternoonSlots &&
-              afternoonSlots.map((slot) => {
-                return (
-                  <td>
-                    <div style={{ display: "flex" }}>
-                      <SlotInput
-                        type="text"
-                        name={slot}
-                        value={slot}
-                        styles="slots"
-                        disabled={true}
-                      />
-                    </div>
-                  </td>
-                );
-              })}
-          </tr>
-          <tr>
-            <td>
-              {eveningSlots && (
-                <p
+                  {slot}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className={style.slot}>
+            <p className={style.title}>Evening</p>
+            <div>
+              {eveningSlots.map((slot) => (
+                <button
+                  key={slot}
+                  onClick={() => handleClick(slot)}
                   style={{
-                    fontFamily: "Lato",
-                    fontSize: "14px",
-                    fontWeight: "400",
-                    lineHeight: "19.6px",
-                    textAlign: "left",
-                    color: "rgba(65, 65, 70, 1)",
+                    backgroundColor:
+                      selectedSlot === slot && isSelected
+                        ? "rgba(42, 167, 255, 1)"
+                        : "",
+                    color:
+                      selectedSlot === slot && isSelected
+                        ? "white"
+                        : "rgba(42, 167, 255, 1)",
                   }}
                 >
-                  Evening
-                </p>
-              )}
-            </td>
-            {eveningSlots &&
-              eveningSlots.map((slot) => {
-                return (
-                  <td>
-                    <div style={{ display: "flex" }}>
-                      <SlotInput
-                        type="text"
-                        name={slot}
-                        value={slot}
-                        styles="slots"
-                        disabled={true}
-                      />
-                    </div>
-                  </td>
-                );
-              })}
-          </tr>
-        </table>
+                  {slot}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </Box>
     </div>
   );

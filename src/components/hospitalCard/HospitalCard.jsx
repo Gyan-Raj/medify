@@ -9,9 +9,20 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Calendar from "../calendar/Calendar";
 import SlotInput from "../input/SlotInput";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedHospital } from "../state/hospitalsList/hospitalSlice";
 
 const HospitalCard = ({ hospital, booking }) => {
   const [expanded, setExpanded] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+  let dispatch = useDispatch();
+  const selectedHospital = useSelector(
+    (state) => state.hospital.selectedHospital
+  );
+  let handleClick = () => {
+    setExpanded(!expanded);
+    console.log(selectedHospital);
+  };
   return (
     <div className={style.hospitalCard}>
       <Accordion className={style.accordian} expanded={expanded}>
@@ -65,8 +76,8 @@ const HospitalCard = ({ hospital, booking }) => {
               <>
                 <p className={style.available}>Available Today</p>
                 <Button
-                  children={expanded ? "Cancel" : "Book FREE Center Visit"}
-                  handleClick={() => setExpanded(!expanded)}
+                  children="Book FREE Center Visit"
+                  handleClick={handleClick}
                   styles="book"
                   type="submit"
                 />
@@ -94,8 +105,8 @@ const HospitalCard = ({ hospital, booking }) => {
         {booking ? (
           ""
         ) : (
-          <AccordionDetails>
-            <Calendar />
+          <AccordionDetails className={style.accordianSummary}>
+            <Calendar isSelected={isSelected} setIsSelected={setIsSelected} />
           </AccordionDetails>
         )}
       </Accordion>

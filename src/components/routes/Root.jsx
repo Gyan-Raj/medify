@@ -4,9 +4,45 @@ import { Outlet, useSearchParams } from "react-router-dom";
 import style from "./Root.module.css";
 import DownloadApp from "../downloadApp/DownloadApp";
 import Footer from "../footer/Footer";
-import axios from "axios";
+// import { fetchStates, fetchCities, fetchHospitals } from "../api/Api";
 
 const Root = () => {
+  // const [statesList, setStatesList] = useState([]);
+  // const [citiesList, setCitiesList] = useState([]);
+  // const [hospitalsList, setHospitalsList] = useState([]);
+
+  // let fetchStatesList = () => {
+  //   try {
+  //     let response = fetchStates();
+  //     // console.log(5);
+  //     setStatesList(response);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // let fetchCitiesList = () => {
+  //   try {
+  //     let response = fetchCities("Alabama");
+  //     setCitiesList(response);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // let fetchHospitalsList = () => {
+  //   try {
+  //     let response = fetchHospitals("Alabama", "DOTHAN");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchStatesList();
+  //   // fetchCitiesList();
+  //   // fetchHospitalsList();
+  // }, []);
+
   return (
     <div>
       <header>

@@ -9,12 +9,8 @@ import FreeConsultation from "../../freeConsultation/FreeConsultation";
 import LatestNews from "../../latestNews/LatestNews";
 import OurFamilies from "../../ourFamilies/OurFamilies";
 import Faq from "../../faq/Faq";
-import DownloadApp from "../../downloadApp/DownloadApp";
-import Footer from "../../footer/Footer";
-import { useOutletContext } from "react-router-dom";
 
 const Home = () => {
-  const [stateData, setStateData] = useOutletContext();
   return (
     <div className={style.home}>
       <div className={style.hoarding}>
@@ -22,11 +18,7 @@ const Home = () => {
       </div>
       <div className={style.content}>
         <div className={style.search}>
-          <Search
-            home={true}
-            stateData={stateData}
-            setStateData={setStateData}
-          />
+          <Search home={true} />
         </div>
         <div className={style.offers}>
           <Offers />

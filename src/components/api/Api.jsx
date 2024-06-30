@@ -5,31 +5,33 @@ export const fetchStates = async () => {
     let response = await axios.get(
       "https://meddata-backend.onrender.com/states"
     );
+    console.log(response);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
-export const fetchCities = (state) => {
+export const fetchCities = async (state) => {
   try {
-    let response = axios
-      .get(`https://meddata-backend.onrender.com/states=${state}&cities`)
-      .then((res) => {
-        return res.data;
-      });
+    let response = await axios.get(
+      `https://meddata-backend.onrender.com/cities/${state}`
+    );
+    // console.log(response);
+    // console.log(response.data);
+    return response.data;
   } catch (error) {
     console.log(error);
   }
 };
-export const fetchHospitals = (state, city) => {
+export const fetchHospitals = async (state, city) => {
   try {
-    let response = axios
-      .get(
-        `https://meddata-backend.onrender.com/states=${state}&cities=${city}`
-      )
-      .then((res) => {
-        return res.data;
-      });
+    let response = await axios.get(
+      `https://meddata-backend.onrender.com/data?state=${state}&city=${city}`
+    );
+    // console.log(response);
+    // console.log(response.data);
+    return response.data;
   } catch (error) {
     console.log(error);
   }

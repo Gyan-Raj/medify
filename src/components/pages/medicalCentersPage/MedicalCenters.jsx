@@ -4,10 +4,12 @@ import img from "../../../assets/adCard/sensodyne_dweb.png.png";
 import SearchBar from "./searchBar/SearchBar";
 import { ReactComponent as Tick } from "../../../assets/hospitalCard/tick.svg";
 
-import data from "./db.json";
 import HospitalCard from "../../hospitalCard/HospitalCard";
+import { useSelector } from "react-redux";
 
 const MedicalCenters = () => {
+  const hospitals = useSelector((state) => state.hospital.hospitalsList);
+  const selectedCity = useSelector((state) => state.hospital.selectedCity);
   return (
     <div className={style.medicalCenters}>
       <div className={style.topContainer}>
@@ -15,11 +17,12 @@ const MedicalCenters = () => {
       </div>
       <div className={style.bottomContainer}>
         <div className={style.leftContainer}>
-          {data && (
+          {hospitals && (
             <>
               <p className={style.noOfMedicalCenters}>
-                {data.length} medical {data.length > 1 ? "centers" : "center"}{" "}
-                available in Alaska
+                {hospitals.length} medical{" "}
+                {hospitals.length > 1 ? "centers" : "center"} available in{" "}
+                {selectedCity}
               </p>
               <div className={style.detailsContainer}>
                 <div className={style.tick}>
@@ -30,7 +33,7 @@ const MedicalCenters = () => {
                   details
                 </span>
               </div>
-              {data.map((ele) => {
+              {hospitals.map((ele) => {
                 return <HospitalCard hospital={ele} booking={false} />;
               })}
             </>
