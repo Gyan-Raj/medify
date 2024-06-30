@@ -1,6 +1,5 @@
 .calendar {
   gap: 28px;
-  opacity: 0px;
   background: rgba(255, 255, 255, 1);
   height: 180px;
   width: 100%;
@@ -45,7 +44,6 @@
   gap: 0px;
   border-radius: 3px;
   border: 1px 0px 0px 0px;
-  opacity: 0px;
   border: 1px solid rgba(42, 167, 255, 1);
   margin-right: 32px;
   padding: 4px;
