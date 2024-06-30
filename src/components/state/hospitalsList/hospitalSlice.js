@@ -22,6 +22,28 @@ export const fetchHospitalsList = createAsyncThunk(
   }
 );
 
+const saveToLocalStorage = (state) => {
+  const {
+    selectedState,
+    selectedCity,
+    selectedHospital,
+    selectedTime,
+    selectedDate,
+  } = state;
+  localStorage.setItem(
+    "appointmentDetails",
+    JSON.stringify([
+      {
+        selectedState,
+        selectedCity,
+        selectedHospital,
+        selectedTime,
+        selectedDate,
+      },
+    ])
+  );
+};
+
 const initialState = {
   statesList: [],
   citiesList: [],
@@ -40,19 +62,24 @@ const hospitalSlice = createSlice({
     setSelectedState: (state, action) => {
       state.selectedState = action.payload;
       state.citiesList = [];
+      saveToLocalStorage(state);
     },
     setSelectedCity: (state, action) => {
       state.selectedCity = action.payload;
       state.hospitalsList = [];
+      saveToLocalStorage(state);
     },
     setSelectedHospital: (state, action) => {
       state.selectedHospital = action.payload;
+      saveToLocalStorage(state);
     },
     setSelectedTime: (state, action) => {
       state.selectedTime = action.payload;
+      saveToLocalStorage(state);
     },
     setSelectedDate: (state, action) => {
       state.selectedDate = action.payload;
+      saveToLocalStorage(state);
     },
   },
 

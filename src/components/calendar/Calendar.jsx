@@ -3,7 +3,10 @@ import style from "./Calendar.module.css";
 import { Box, Tab, Tabs } from "@mui/material";
 import { DateTime } from "luxon";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedTime } from "../state/hospitalsList/hospitalSlice";
+import {
+  setSelectedDate,
+  setSelectedTime,
+} from "../state/hospitalsList/hospitalSlice";
 
 const Label = ({ day, slots }) => {
   return (
@@ -51,15 +54,14 @@ const Calendar = ({ setIsSelected, isSelected }) => {
   const [value, setValue] = useState(0);
   const [selectedSlot, setSelectedSlot] = useState(null);
 
-  const selectedHospital = useSelector(
-    (state) => state.hospital.selectedHospital
-  );
-  const selectedTime = useSelector((state) => state.hospital.selectedTime);
-  const selectedDate = useSelector((state) => state.hospital.selectedDate);
   const dispatch = useDispatch();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    const selectedDate = DateTime.now()
+      .plus({ days: newValue })
+      .toFormat("EEE, dd MMM");
+    dispatch(setSelectedDate(selectedDate));
   };
 
   const handleClick = (slot) => {

@@ -12,16 +12,19 @@ import SlotInput from "../input/SlotInput";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedHospital } from "../state/hospitalsList/hospitalSlice";
 
-const HospitalCard = ({ hospital, booking }) => {
+const HospitalCard = ({ hospital, booking, data }) => {
   const [expanded, setExpanded] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
   let dispatch = useDispatch();
   const selectedHospital = useSelector(
     (state) => state.hospital.selectedHospital
   );
+  console.log(data);
+  console.log(data.selectedTime);
   let handleClick = () => {
     setExpanded(!expanded);
     console.log(selectedHospital);
+    dispatch(setSelectedHospital(hospital));
   };
   return (
     <div className={style.hospitalCard}>
@@ -87,14 +90,14 @@ const HospitalCard = ({ hospital, booking }) => {
                 <SlotInput
                   type="text"
                   name="time"
-                  value="time "
+                  value={data.selectedTime}
                   disabled
                   styles="time"
                 />
                 <SlotInput
                   type="text"
                   name="date"
-                  value="date "
+                  value={data.selectedDate}
                   disabled
                   styles="date"
                 />
